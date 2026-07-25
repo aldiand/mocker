@@ -1,0 +1,164 @@
+@import '@fontsource/geist-sans/400.css';
+@import '@fontsource/geist-sans/500.css';
+@import '@fontsource/geist-sans/600.css';
+@import '@fontsource/geist-sans/700.css';
+@import '@fontsource-variable/inter-tight/index.css';
+@import '@fontsource-variable/jetbrains-mono/index.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 98%;
+    --foreground: 222 22% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 22% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 22% 11%;
+
+    --primary: 252 95% 68%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 222 22% 11%;
+
+    --muted: 220 14% 95%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 252 95% 96%;
+    --accent-foreground: 252 95% 30%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 252 95% 68%;
+
+    --sidebar: 0 0% 100%;
+    --sidebar-foreground: 222 22% 11%;
+    --sidebar-accent: 252 95% 96%;
+
+    --canvas: 220 20% 96%;
+    --canvas-dot: 220 13% 84%;
+  }
+
+  .dark {
+    --background: 222 24% 7%;
+    --foreground: 210 20% 96%;
+
+    --card: 222 22% 10%;
+    --card-foreground: 210 20% 96%;
+
+    --popover: 222 22% 10%;
+    --popover-foreground: 210 20% 96%;
+
+    --primary: 252 95% 72%;
+    --primary-foreground: 222 22% 8%;
+
+    --secondary: 222 16% 14%;
+    --secondary-foreground: 210 20% 96%;
+
+    --muted: 222 16% 14%;
+    --muted-foreground: 220 9% 64%;
+
+    --accent: 252 60% 24%;
+    --accent-foreground: 252 95% 86%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 222 16% 18%;
+    --input: 222 16% 18%;
+    --ring: 252 95% 72%;
+
+    --sidebar: 222 24% 9%;
+    --sidebar-foreground: 210 20% 96%;
+    --sidebar-accent: 252 50% 20%;
+
+    --canvas: 222 24% 9%;
+    --canvas-dot: 222 16% 20%;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Inter Tight Variable', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+
+  ::selection {
+    background-color: hsl(var(--primary) / 0.2);
+    color: hsl(var(--foreground));
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.4);
+    background-clip: padding-box;
+    border: 2px solid transparent;
+  }
+}
+
+@layer components {
+  .text-display {
+    font-family: 'Geist', system-ui, sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  .canvas-dotted {
+    background-color: hsl(var(--canvas));
+    background-image: radial-gradient(circle at 1px 1px, hsl(var(--canvas-dot)) 1px, transparent 0);
+    background-size: 18px 18px;
+  }
+
+  .checker {
+    background-color: hsl(var(--canvas));
+    background-image:
+      linear-gradient(45deg, hsl(var(--border)) 25%, transparent 25%),
+      linear-gradient(-45deg, hsl(var(--border)) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, hsl(var(--border)) 75%),
+      linear-gradient(-45deg, transparent 75%, hsl(var(--border)) 75%);
+    background-size: 16px 16px;
+    background-position: 0 0, 0 8px, 8px -8px, -8px 0px;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
