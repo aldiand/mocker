@@ -12,7 +12,7 @@ export function BrandWordmark({ className }: { className?: string }) {
         </svg>
       </div>
       <div className="flex flex-col leading-none">
-        <span className="text-display text-[15px] font-semibold tracking-tight">Frame</span>
+        <span className="text-display text-[15px] font-semibold tracking-tight">Mocker</span>
         <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
           Prototype Gallery
         </span>

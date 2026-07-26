@@ -50,7 +50,7 @@ export function Shell() {
           <div className="ml-auto flex items-center gap-1 md:ml-2">
             <ThemeToggle />
             <a
-              href="https://github.com"
+              href="https://github.com/aldiand/mocker"
               target="_blank"
               rel="noreferrer"
               aria-label="View repository"
