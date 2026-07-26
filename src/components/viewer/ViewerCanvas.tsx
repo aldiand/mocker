@@ -46,10 +46,15 @@ export function ViewerCanvas({ prototype, onBack }: ViewerCanvasProps) {
         minScale={0.2}
         maxScale={3}
         centerOnInit
+        limitToBounds={false}
         wheel={{ step: 0.08 }}
         doubleClick={{ mode: 'reset' }}
         panning={{ velocityDisabled: false }}
-        onTransformed={(ref) => setZoomLevel(ref.state.scale)}
+        onTransformed={(ref) => {
+          if (ref.state.scale !== zoomLevel) {
+            setZoomLevel(ref.state.scale);
+          }
+        }}
       >
         {({ zoomIn, zoomOut, resetTransform }) => (
           <>
